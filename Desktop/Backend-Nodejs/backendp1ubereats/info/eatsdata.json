@@ -1,0 +1,139 @@
+{
+    "Zones": [
+        {
+            "Patio_Sendero": [
+                {
+                    "id": 1,
+                    "Little_Caesars": [
+                        {
+                            "dish": "Peperoni Large",
+                            "price": 5
+                        },
+                        {
+                            "dish": "3 Meat Treat",
+                            "price": 8
+                        },
+                        {
+                            "dish": "Caesar Wings Premium",
+                            "price": 10
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "Subway": [
+                        {
+                            "dish": "Subway del día",
+                            "price": 3
+                        },
+                        {
+                            "dish": "x50 Cookies",
+                            "price": 20
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Nogalera": [
+                {
+                    "id": 1,
+                    "Kentucky_Friend_Chiken": [
+                        {
+                            "dish": "Double Bucket",
+                            "price": 20
+                        },
+                        {
+                            "dish": "Single Bucket",
+                            "price": 12
+                        },
+                        {
+                            "dish": "Pollo + Ke-tira",
+                            "price": 5
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "Noreste Grill": [
+                        {
+                            "dish": "Parrilada Mix",
+                            "price": 15
+                        },
+                        {
+                            "dish": "Parrillada NG",
+                            "price": 30
+                        },
+                        {
+                            "dish": "Parrillada 400g Arrachera",
+                            "price": 40
+                        },
+                        {
+                            "dish": "Costilla triple carne",
+                            "price": 25
+                        }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "Pollo_Feliz": [
+                        {
+                            "dish": "Paquete 1 & 1/2 Pollo",
+                            "price": 18
+                        },
+                        {
+                            "dish": "Paquete 2 Pollos",
+                            "price": 20
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Galerias": [
+                {
+                    "id": 1,
+                    "Applebee's": [
+                        {
+                            "dish": "Quesadilla Burger",
+                            "price": 20
+                        },
+                        {
+                            "dish": "Nachos",
+                            "price": 10
+                        },
+                        {
+                            "dish": "Boneless Buffalo Wings",
+                            "price": 15
+                        },
+                        {
+                            "dish": "Ribs Platter",
+                            "price": 18
+                        },
+                        {
+                            "dish": "Ribeye",
+                            "price": 30
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "Starbucks": [
+                        {
+                            "dish": "Expresso",
+                            "price": 35
+                        },
+                        {
+                            "dish": "Frapuccino",
+                            "price": 50
+                        },
+                        {
+                            "dish": "Cheesecake Brulee de Frambuesa",
+                            "price": 200
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

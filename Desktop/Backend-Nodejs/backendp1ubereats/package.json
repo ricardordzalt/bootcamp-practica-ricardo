@@ -1,0 +1,22 @@
+{
+  "name": "backendp1ubereats",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "ubereatsapp": "nodemon --exec babel-node ubereats.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.6",
+    "@babel/node": "^7.8.4",
+    "@babel/preset-env": "^7.8.6",
+    "core-js": "^3.6.4",
+    "nodemon": "^2.0.2"
+  }
+}

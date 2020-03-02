@@ -1,16 +1,14 @@
 [
   {
-    "id": 1,
     "name": "Little_Caesars",
     "zone": "Patio Sendero",
     "dishes": [
-      { "cart": 0, "dish": "Peperoni Large", "price": 5 },
+      { "cart": 0, "dish": "Preperoni Large", "price": 5 },
       { "cart": 0, "dish": "3 Meat Treat", "price": 8 },
       { "cart": 0, "dish": "Caesar Wings Premium", "price": 10 }
     ]
-  },
+  },  
   {
-    "id": 2,
     "name": "Subway",
     "zone": "Patio Sendero",
     "dishes": [
@@ -19,7 +17,6 @@
     ]
   },
   {
-    "id": 3,
     "name": "Kentucky_Friend_Chiken",
     "zone": "Nogalera",
     "dishes": [
@@ -29,7 +26,6 @@
     ]
   },
   {
-    "id": 4,
     "name": "Noreste Grill",
     "zone": "Nogalera",
     "dishes": [
@@ -40,7 +36,6 @@
     ]
   },
   {
-    "id": 5,
     "name": "Pollo_Feliz",
     "zone": "Nogalera",
     "dishes": [
@@ -49,7 +44,6 @@
     ]
   },
   {
-    "id": 6,
     "name": "Applebee's",
     "zone": "Galerias",
     "dishes": [
@@ -61,7 +55,6 @@
     ]
   },
   {
-    "id": 7,
     "name": "Starbucks",
     "zone": "Galerias",
     "dishes": [

@@ -13,15 +13,8 @@ APP.use(bodyParser.json());
 
 const SERVER = http.createServer(APP);
 
-//              restaurant   platillo 
-//console.log(appsdata[3].dishes[2].dish);
-
-
 APP.get('/zona/:zoneid', (req, res) => {
-    var num, 
-    i, 
-    msj = "Restaurantes disponibles en la zona elegida: ", 
-    zonaid = req.params.zoneid;
+    var num, i, msj = "Restaurantes disponibles en la zona elegida: ", zonaid = req.params.zoneid;
     var zonas =  appsdata.filter(function(Zone) {
         return Zone.zone == zonaid;
     });
@@ -33,7 +26,7 @@ APP.get('/zona/:zoneid', (req, res) => {
 });
 
 APP.get('/restaurant/:restid', (req, resp) =>{
-    var x, num, i, msj = "Los platillos son: ", rest = req.params.restid;
+    var num, i, msj = "Los platillos son: ", rest = req.params.restid;
     var rests =  appsdata.filter(function(res) {
         return res.name == rest;
     });
@@ -53,7 +46,6 @@ APP.get('/restaurant/:restid', (req, resp) =>{
                 if(appsdata[i].dishes[j].dish == bought){
                     appsdata[i].dishes[j].cart += 1;
                     res.send("Compraste " +appsdata[i].dishes[j].cart + " " + bought);
-                    console.log(appsdata);   
                 }
             }
         }
@@ -66,11 +58,55 @@ APP.get('/quit/:food', (req, res) => {
         for(j=0;j<num2;j++){
             if(appsdata[i].dishes[j].dish == bought && appsdata[i].dishes[j].cart > 0){
                 appsdata[i].dishes[j].cart -= 1;
-                res.send("Quitaste " + bought);
-                console.log(appsdata);   
+                res.send("Quitaste 1 " + bought);
             }
         }
     }
+}); 
+
+APP.get('/checkout', (req, res) => {
+    var i, j, num1, num2, msj = "Tu pedido es de ", total = 0;
+    num1 = Object.keys(appsdata).length;
+    for(i=0;i<num1;i++){
+        num2 = Object.keys(appsdata[i].dishes).length;
+        for(j=0;j<num2;j++){
+            if(appsdata[i].dishes[j].cart  > 0){
+                total += appsdata[i].dishes[j].price * appsdata[i].dishes[j].cart;
+                msj += appsdata[i].dishes[j].cart + " " + appsdata[i].dishes[j].dish + " ";
+            }
+        }
+    }
+    res.send(msj + "El total por ésta compra sería de: $" + total + "USD ");
+}); 
+
+APP.get('/cancelar', (req, res) => {
+    var i, j, num1, num2;
+    num1 = Object.keys(appsdata).length;
+    for(i=0;i<num1;i++){
+        num2 = Object.keys(appsdata[i].dishes).length;
+        for(j=0;j<num2;j++){
+            if(appsdata[i].dishes[j].cart  > 0){
+                appsdata[i].dishes[j].cart = 0;
+            }
+        }
+    }
+    res.send("Orden cancelada");
+}); 
+
+APP.get('/confirmar', (req, res) => {
+    var i, j, num1, num2, total = 0;
+    num1 = Object.keys(appsdata).length;
+    for(i=0;i<num1;i++){
+        num2 = Object.keys(appsdata[i].dishes).length;
+        for(j=0;j<num2;j++){
+            if(appsdata[i].dishes[j].cart  > 0){
+                total += appsdata[i].dishes[j].price * appsdata[i].dishes[j].cart;
+                appsdata[i].dishes[j].cart = 0;
+                console.log("Has comprado " + appsdata[i].dishes[j].cart + " " + appsdata[i].dishes[j].dish);
+            }
+        }
+    }
+    res.send("El total de la compra fue de: $" + total + "USD");
 }); 
 
 SERVER.listen(process.env.PORT); 

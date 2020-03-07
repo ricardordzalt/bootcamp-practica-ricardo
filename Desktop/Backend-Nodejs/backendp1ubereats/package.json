@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "ubereatsapp": "nodemon --exec babel-node ubereats.js"
+    "ubereats": "nodemon --exec babel-node uberEats.js"
   },
   "author": "",
   "license": "ISC",

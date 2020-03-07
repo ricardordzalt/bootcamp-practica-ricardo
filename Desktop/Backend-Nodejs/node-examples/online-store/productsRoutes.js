@@ -24,7 +24,6 @@ export default (PRODUCTS, productsList, total) => {
         if(product && product.stock > 0) {
             product.stock--;
             total += product.value;
-            console.log(total);
             product.sold++;
             res.json({ status: 'ok', result: product });
         } else{ 

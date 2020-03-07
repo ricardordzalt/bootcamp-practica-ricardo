@@ -7,7 +7,8 @@ export default (ADMIN, productsList) => {
             "id": uuidv4(), 
             "name": req.query.name, 
             "stock": Number(req.query.stock), 
-            "value": Number(req.query.value)
+            "value": Number(req.query.value),
+            "sold": Number(0)
         });
         res.json({ status: 'ok', products: productsList});
     }

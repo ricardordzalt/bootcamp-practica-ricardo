@@ -18,14 +18,14 @@ export default [
         name: 'Sabritas',
         stock: 5,
         value: 15,
-        sold: 100
+        sold: 0
     },
     {
         id: '95eff2e3-4c12-404c-86f2-2fb5bc16d5fc',
         name: 'Aceite',
         stock: 4,
         value: 22,
-        sold: 5
+        sold: 0
     },
     {
         id: 'e3ea58a3-b90a-44d5-b13b-120093b61eab',

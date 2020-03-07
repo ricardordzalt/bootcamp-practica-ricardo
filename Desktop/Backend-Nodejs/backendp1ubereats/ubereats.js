@@ -4,7 +4,10 @@ import dotenv from 'dotenv';
 import dishesList from './info/dishesList.js';
 import userRoutes from './uberRoutes/userRoutes';
 import restRoutes from './uberRoutes/restRoutes';
+import deliverRoutes from './uberRoutes/deliverRoutes';
 import cartList from './info/cartList';
+import confirmedList from './info/confirmedList';
+import preparingList from './info/preparingList';
 import deliveryList from './info/deliveryList';
 
 dotenv.config();
@@ -12,9 +15,11 @@ dotenv.config();
 const APP = express();
 const UBERCLIENTE = express();
 const UBERREST = express();
+const UBERDELIVER = express();
 
 APP.use('/user', UBERCLIENTE);
 APP.use('/rest', UBERREST);
+APP.use('/deliver', UBERDELIVER);
 
 const SERVER = http.createServer(APP);
 
@@ -22,6 +27,7 @@ APP.get('/', (req, res) =>{
     res.send('UBER EATS HOME');
 });
 
-userRoutes(UBERCLIENTE, dishesList, cartList);
-restRoutes(UBERREST, cartList)
+userRoutes(UBERCLIENTE, dishesList, cartList, confirmedList);
+restRoutes(UBERREST, confirmedList, preparingList, deliveryList);
+deliverRoutes(UBERDELIVER, deliveryList);
 SERVER.listen(process.env.PORT);

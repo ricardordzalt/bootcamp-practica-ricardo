@@ -9,6 +9,7 @@ import cartList from './info/cartList';
 import confirmedList from './info/confirmedList';
 import preparingList from './info/preparingList';
 import deliveryList from './info/deliveryList';
+import acceptedList from './info/acceptedList';
 
 dotenv.config();
 
@@ -28,6 +29,6 @@ APP.get('/', (req, res) =>{
 });
 
 userRoutes(UBERCLIENTE, dishesList, cartList, confirmedList);
-restRoutes(UBERREST, confirmedList, preparingList, deliveryList);
-deliverRoutes(UBERDELIVER, deliveryList);
+restRoutes(UBERREST, dishesList, confirmedList, preparingList, deliveryList);
+deliverRoutes(UBERDELIVER, deliveryList, acceptedList);
 SERVER.listen(process.env.PORT);

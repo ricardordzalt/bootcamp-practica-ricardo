@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    div
+        h1 Chat Home
+        input#userName(placeHolder="Ingresa aquí tu nombre de usuario")
+        button#send-user Enviar
+        br
+        input#message(placeHolder="Texto a envíar")
+        button#send-message Enviar
+    div#messages-list(style='background-color:LightCyan')
+    h3 Usuarios online
+    div#users-list(style='background-color:PaleGoldenrod')
+    h3 Historia del chat
+    div#messages-history(style='background-color:MediumAquamarine')

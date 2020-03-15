@@ -1,0 +1,18 @@
+html
+    head
+        title The Facebook
+        meta(name="viewport", content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width")
+    body
+        h1 The Facebook
+        div#show-user-alert
+        div#new-state
+            input#user-name(placeholder="Nombre de usuario")
+            button#send-user ¡Ingresar!
+            br
+            br
+            textarea#state-text(placeholder="¿Que estás pensando")
+            button#send-state ¡Publicar!
+        div#states
+
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.1/socket.io.js")
+    script(src="./js/main.js")

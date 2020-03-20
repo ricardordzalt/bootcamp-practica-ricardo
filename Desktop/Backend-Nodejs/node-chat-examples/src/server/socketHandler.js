@@ -28,8 +28,7 @@ export default (io, activeUsers, chatHistory, connection) => (socket) => {
         //const nuevo = activeUsers.find(a => a.userName === data.userName);
         //if (nuevo === undefined) {
             activeUsers = activeUsers.filter(a => a.userName !== data.userName);
-            activeUsers.push({ id: socket.id, userName: data.userName });         
-            console.log(activeUsers);   
+            activeUsers.push({ id: socket.id, userName: data.userName });
             io.emit(EVENTS.BROADCAST_USERS_LIST, activeUsers);
             io.emit(EVENTS.DISABLE_USER_INPUT);
         //}
@@ -43,10 +42,8 @@ export default (io, activeUsers, chatHistory, connection) => (socket) => {
     });
 
     socket.on(EVENTS.DISCONNECT, () => {
-        console.log(socket.id);
         const disconnectedUser = activeUsers.find( u => u.id === socket.id);
         activeUsers = activeUsers.filter( u => u.id !== socket.id);
-        console.log(disconnectedUser)
         if(disconnectedUser) {
             connection.query('update users set lastConnection = now() where userName= ?', [disconnectedUser.userName])
         }

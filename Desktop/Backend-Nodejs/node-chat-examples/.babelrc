@@ -1,10 +1,7 @@
 {
     "presets": [
         [
-        "@babel/preset-env",
-        {
-            "userBuiltIns": "entry"
-        }
+        "@babel/preset-env"
         ]
     ]
 }

@@ -11,7 +11,8 @@
     "dev:15": "nodemon --exec babel-node 15-responses.js",
     "ej3": "nodemon --exec babel-node ejercicio3.js",
     "dev:16": "nodemon --exec babel-node 16-render.js",
-    "dev:17": "nodemon --exec babel-node 17-sub-app.js"
+    "dev:17": "nodemon --exec babel-node 17-sub-app.js",
+    "dev:18": "nodemon --exec babel-node 18-mysql.js"
   },
   "author": "",
   "license": "ISC",
@@ -24,6 +25,7 @@
     "express-bearer-token": "^2.4.0",
     "jade": "^1.11.0",
     "jsonwebtoken": "^8.5.1",
+    "mysql": "^2.18.1",
     "pug": "^2.0.4",
     "uuid": "^7.0.2"
   },

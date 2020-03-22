@@ -2,6 +2,16 @@ import http from 'http';
 import express from 'express';
 import socketio from 'socket.io';
 import socketHandler from './src/server/socketHandler';
+import mysql from 'mysql';
+
+const connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'facebook'
+});
+
+connection.connect();
 
 const APP = express ();
 const SERVER = http.createServer(APP);

@@ -4,7 +4,7 @@ import connection from '../../modules/connection';
 export default (io, activeUsers, chatHistory, connection) => (socket) => {
     io.emit(EVENTS.BROADCAST_MESSAGE_HISTORY, chatHistory);
     io.emit(EVENTS.BROADCAST_USERS_LIST, activeUsers);
-    connection.query('select * from users where lastConnection >= now() - interval 15 second', (error, results) => {
+    connection.query('select * from users where lastConnection >= now() - interval 1 minute', (error, results) => {
         io.emit(EVENTS.BROADCAST_LAST_USERS_CONNECTED_LIST, results);
     });
 
